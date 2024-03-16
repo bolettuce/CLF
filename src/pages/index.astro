@@ -1,31 +1,7 @@
 ---
-
+import MainLayout from  "../mainlayout/MainLayout.astro"
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header>
-			<h1>NOEL ER HER HEHEHE</h1>
-			<nav>
-				<ul>
-					<li><a href=""><img src="/src/assets/Stacked-Logo-for-frontpage.webp" alt="Copenhagen Light Festival logo"></a></li>
-					<p>2. – 25. FEBRUAR 2024</p>
-					<li><a href="">Program</a></li>
-					<li><a href="">Festival Map</a></li>
-					<li><a href="">Book</a></li>
-					<li><a href="">Info</a></li>
-					<li><a href="">Om</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
+<MainLayout>
 			<video width="auto" height="auto" autoplay loop>
 				<source src="/src/assets/Gradient.mp4" type="video/mp4">
 			</video> 
@@ -76,6 +52,4 @@
 					<img src="/src/assets/" alt="">
 					<img src="/src/assets/" alt="">
 				</div>
-		</main>
-	</body>
-</html>
+		</MainLayout>
