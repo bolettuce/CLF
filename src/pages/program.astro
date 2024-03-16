@@ -1,6 +1,21 @@
 ---
 import MainLayout from  "../mainlayout/MainLayout.astro"
+import CardArt from "../components/CardArt.astro"
 ---
 <MainLayout>
-
+    <div class="Cardart-container">
+<CardArt></CardArt>
+<CardArt></CardArt>
+<CardArt></CardArt>
+<CardArt></CardArt>
+</div>
 </MainLayout>
+
+<style>
+    .Cardart-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+</style>
