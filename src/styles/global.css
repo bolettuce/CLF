@@ -1,3 +1,34 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+    font-family: "Montserrat", sans-serif;
+    font-size: larger;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* LANDING PAGE */
+
 body {
     margin: 0;
     padding: 0;
@@ -63,3 +94,5 @@ body {
     margin: 40px;
   }
 
+
+  /* PROGRAM */
