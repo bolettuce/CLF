@@ -11,8 +11,8 @@
 // import NBLU from  "../assets/NBLU-logo-prim├art-kort-white.webp"
 ---
 
-<section class="marquee-container">
-    <div class="marquee-content">
+<section class="scrolling-container">
+    <div class="scrolling-content">
         <img src="src/assets/NBLU-logo-prim├art-kort-white.webp" alt="NBLU Logo">
         <img src="src/assets/Villum-Fonden-White.webp" alt="Villum Fonden">
         <img src="src/assets/Augustinus_500x300_web.webp" alt="AugusTinus">
@@ -37,21 +37,21 @@
         width: 7rem;
     }
 
-    .marquee-container {
+    .scrolling-container {
         overflow: hidden;
         background-color: #4487CC;
     }
 
-    .marquee-content {
+    .scrolling-content {
         display: flex;
         align-items: center;
         flex-direction: row;
         gap: 5rem;
         padding: 1rem;
-        animation: marquee 20s linear infinite;
+        animation: scrollingbanner 20s linear infinite;
     }
 
-    @keyframes marquee {
+    @keyframes scrollingbanner {
         0% {
             transform: translateX(100%);
         }
