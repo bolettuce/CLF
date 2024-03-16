@@ -1,0 +1,63 @@
+---
+// import Villum from  "../assets/Villum-Fonden-White.webp"
+// import AugusTinus from  "../assets/Augustinus_500x300_web.webp"
+// import VandTårn from  "../assets/broenshoej-vandtårn.webp"
+// import KbhMaerke from  "../assets/KBH_Maerke_DK_White_CMYK-2.webp"
+// import KnudHoj from  "../assets/KnudHoejgaard_500x300_web.webp"
+// import LogoHvid from  "../assets/Logo_HVID_PNG_ restad-Syd.webp"
+// import LogoPlads from  "../assets/logo_plads23_hvid-1.webp"
+// import LouisHansen from  "../assets//Louis-Hansens_Fond_logo_RGB_Hvid.webp"
+// import KulturTaarnet from  "../assets/mainlogo_white_kulturtårnet.webp"
+// import NBLU from  "../assets/NBLU-logo-prim├art-kort-white.webp"
+---
+
+<section class="marquee-container">
+    <div class="marquee-content">
+        <img src="src/assets/NBLU-logo-prim├art-kort-white.webp" alt="NBLU Logo">
+        <img src="src/assets/Villum-Fonden-White.webp" alt="Villum Fonden">
+        <img src="src/assets/Augustinus_500x300_web.webp" alt="AugusTinus">
+        <img src="src/assets/broenshoej-vandtårn.webp" alt="VandTårn">
+        <img class="mindre" src="src/assets/KBH_Maerke_DK_White_CMYK-2.webp" alt="KbhMaerke">
+        <img src="src/assets/KnudHoejgaard_500x300_web.webp" alt="Knud Hojgaard">
+        <img src="src/assets/Logo_HVID_PNG_ restad-Syd.webp" alt="LogoHvid">
+        <img src="src/assets/logo_plads23_hvid-1.webp" alt="LogoPlads">
+        <img src="src/assets/Louis-Hansens_Fond_logo_RGB_Hvid.webp" alt="LouisHansen">
+        <img class="mindre" src="src/assets/mainlogo_white_kulturtårnet.webp" alt="KulturTaarnet">
+    </div>
+</section>
+
+<style>
+    img {
+        width: 15rem;
+        height: fit-content;   
+        display: flex;
+    }
+
+    img.mindre {
+        width: 7rem;
+    }
+
+    .marquee-container {
+        overflow: hidden;
+        background-color: #4487CC;
+    }
+
+    .marquee-content {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 5rem;
+        padding: 1rem;
+        animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+</style>
