@@ -108,6 +108,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-top: 1px solid black;
+    gap: 10px;
   }
 
   .container_2_2 img {
