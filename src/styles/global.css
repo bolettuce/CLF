@@ -38,3 +38,28 @@ body {
   .container_1_2 > :nth-child(n + 3) {
     margin-left: 40px; 
   }
+
+  .container_1_3 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  
+  .container_1_3 > div:last-child {
+    margin-left: auto; 
+  }
+
+  .container_1_4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 80px;
+  }
+  
+  .container_1_5,
+  .container_1_6 {
+    margin: 40px;
+  }
+
