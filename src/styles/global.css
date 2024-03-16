@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  video {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .container_1_1 {
+    margin: 0 auto; 
+    max-width: 80%; 
+    text-align: center;
+  }
+
+  .container_1_2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .container_1_2 > :nth-child(n + 1) {
+    margin-left: -40px; 
+  }
+  
+  .container_1_2 > :nth-child(n + 3) {
+    margin-left: 40px; 
+  }
