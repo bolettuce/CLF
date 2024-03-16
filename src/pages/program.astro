@@ -1,8 +1,17 @@
 ---
 import MainLayout from  "../mainlayout/MainLayout.astro"
+import CardArt from "../components/CardArt.astro"
 ---
 <MainLayout>
+    <div class="Cardart-container">
+<CardArt></CardArt>
+<CardArt></CardArt>
+<CardArt></CardArt>
+<CardArt></CardArt>
+</div>
+</MainLayout>
 
+<<<<<<< HEAD
 <div class="container_2_1">
     <div>
         <h1>PROGRAM 2024</h1>
@@ -42,3 +51,13 @@ import MainLayout from  "../mainlayout/MainLayout.astro"
 </div>
 
 </MainLayout>
+=======
+<style>
+    .Cardart-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+</style>
+>>>>>>> NyComponent
