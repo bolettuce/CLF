@@ -97,5 +97,16 @@ body {
 
   /* PROGRAM */
 
+  .container_2_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
-  
+  .container_2_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  span {
+    font-weight: bold;
+}
