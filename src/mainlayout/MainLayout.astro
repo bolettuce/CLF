@@ -15,7 +15,6 @@ import Logo from "../components/Logo.astro"
 		<header>
 			<nav>
                 <Logo></Logo>
-                <p>2. – 25. FEBRUAR 2024</p>
 				<ul>
 					<li><a href="">Program</a></li>
 					<li><a href="">Festival Map</a></li>
@@ -29,7 +28,76 @@ import Logo from "../components/Logo.astro"
             <slot />
         </main>
         <footer>
-
+            <article>
+        <h2>Kontakt:</h2>
+        <ul>
+            <li><span>Mail:</span> info@copenhagenlightfestival.org</li>
+            <li><span>Telefon:</span> +45 25556604</li>
+            <li><span>Adresse:</span> Toldbodgade 39, 1253 København K</li>
+            <li><span>Vat/CVR:</span> DK-40793232</li>
+        </ul>
+        </article>
+        <article>
+<h2>Join our news letter!</h2>
+        <form id="newsletter-form" action="#" method="post">
+            <input type="textarea" name="text" placeholder="First name" required>
+            <input type="textarea" name="text" placeholder="Last name" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <button type="submit">Subscribe</button>
+        </article>
         </footer>
 </html>
     </body>
+
+    <style>
+
+        /* Header */
+        nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+           nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 1rem;
+        margin: 16px 0;
+        }
+
+    /* Footer */
+    footer {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    li span {
+        font-weight: bold;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 25rem;
+    }
+
+    input {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+    }
+
+    form button {
+    place-self: end;
+    }
+    </style>
