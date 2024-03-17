@@ -1,6 +1,7 @@
 ---
 import MainLayout from  "../mainlayout/MainLayout.astro"
 import CardArt from "../components/CardArt.astro"
+import CollapsibleEvent from "../components/CollapsibleEvent.astro"
 ---
 <MainLayout>
 <div class="container_2_1">
@@ -31,18 +32,6 @@ import CardArt from "../components/CardArt.astro"
 
 
 
-
-<!-- <div class="carousel-container">
-    <div class="Cardart-container">
-        <CardArt></CardArt>
-        <CardArt></CardArt>
-        <CardArt></CardArt>
-        <CardArt></CardArt>
-        <CardArt></CardArt>
-        <CardArt></CardArt>
-    </div>
-</div> -->
-
 <div class="container">
     <div class="carousel-view">
         <div id="item-list" class="item-list">
@@ -56,9 +45,6 @@ import CardArt from "../components/CardArt.astro"
     </div>
 </div>
 
-
-
-
 <div class="se_events">
     <h2>Se events</h2>
     <img class="hoppe_pil" src="/src/assets/Hoppe_pil.svg" alt="events pil">
@@ -69,36 +55,7 @@ import CardArt from "../components/CardArt.astro"
     <p>Forneden kan du finde en oversigt over alle  events i perioden d. 2.-25. febuar 2024</p>
 </div>
 
-<button type="button" class="collapsible">Open Collapsible</button>
-<div class="content">
-  <p>Lorem ipsum...</p>
-</div> 
+
+<CollapsibleEvent></CollapsibleEvent>
 
 </MainLayout>
-=======
-<style>
-    .Cardart-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 0.6rem;
-        margin-top: 1rem;
-    }
-
-</style>
-
-<script>
-    var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-} 
-</script>

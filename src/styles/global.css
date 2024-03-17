@@ -175,6 +175,7 @@ body {
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     gap: 10px;
+    width: 175%; 
 }
 
 
