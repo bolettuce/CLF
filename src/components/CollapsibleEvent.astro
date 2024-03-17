@@ -8,24 +8,29 @@
     <img class="collapse-icon" src="/src/assets/drop_down_pil.svg" alt="">
 </section>
 
-<div class="content">
-  <p>Lorem ipsum...</p>
+<div class="content" style="display: none;">
+    <div><img src="/src/assets/dac.png" alt=""></div>
+    <div>
+        <p><span>Af: </span>Dansk Arkitektur Center</p>
+        <p><span>Hvor: </span>Bryghusgade 10, 1473 København</p>
+        <p>Hvorfor bruger vi mest byen om  sommeren? Hvorfor ikke også, når det er koldt – på vinterens præmisser?  Copenhagen Light Festival hjælper os til at nyde byen om vinteren. Men  hvad gør vi, når festivalens lys er slukket?
+        Kom til AfterDAC og mød en af drivkræfterne bag Copenhagen Light  Festival, lysdesigner Jesper Kongshaug, og arkitekt Ellen T. O’Gara,  indehaver af tegnestuen Platant, som i mere end ti år har arbejdet med  vinterbyen.</p>
+    </div> 
 </div>
-
 
 <style>
 
 img.collapse-icon {
-    width: 7%; 
+    width: 10%; 
     display: block;
     height: auto;
     justify-self: end;
-    transition: transform 0.3s ease; /* Add transition for smooth animation */
+    transition: transform 0.3s ease;
 }
 
 .collapsible {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     align-items: center;
     padding-left: 30px;
     padding-right: 30px;
@@ -33,16 +38,12 @@ img.collapse-icon {
     cursor: pointer;
 }
 
-p {
-    width: 100%;
-    text-align: right;
-    margin: 0;
-}
-
 .content {
-    padding: 0 18px;
-    display: none;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 80px;
+    gap: 30px;
 }
 </style>
 
@@ -54,16 +55,35 @@ for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
-        if (content.style.display === "block") {
+        if (content.style.display === "grid") {
             content.style.display = "none";
-            // Rotate the collapse icon back to its original position
             this.querySelector('.collapse-icon').style.transform = 'rotate(0deg)';
         } else {
-            content.style.display = "block";
-            // Rotate the collapse icon 90 degrees counter-clockwise
+            content.style.display = "grid"; 
             this.querySelector('.collapse-icon').style.transform = 'rotate(-90deg)';
+            closeOtherCollapsibles(this);
         }
     });
 }
 
+function closeOtherCollapsibles(activeCollapsible) {
+    var collapsibles = document.getElementsByClassName("collapsible");
+    for (var j = 0; j < collapsibles.length; j++) {
+        if (collapsibles[j] !== activeCollapsible) {
+            collapsibles[j].classList.remove("active");
+            var content = collapsibles[j].nextElementSibling;
+        }
+    }
+}
+
 </script>
+
+<!-- <a href={`/name/${data.artist}`}>
+<article>
+    <div class="imgfolder">
+    <img src={data.profile_img} alt="placeholder">
+    </div>
+    <h2>{data.name}</h2>
+    <p>Show more</p>
+</article>
+</a> -->
