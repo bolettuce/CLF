@@ -2,36 +2,68 @@
 
 ---
 
-<button type="button" class="collapsible">Open Collapsible</button>
+<section class="collapsible">
+    <h3>AfterDAC: Se lyst på mørket </h3>
+    <p>torsdag d. 22.2. kl. 20-21.30</p>
+    <img class="collapse-icon" src="/src/assets/drop_down_pil.svg" alt="">
+</section>
+
 <div class="content">
   <p>Lorem ipsum...</p>
-</div> 
+</div>
 
-</MainLayout>
-=======
+
 <style>
-    .Cardart-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 0.6rem;
-        margin-top: 1rem;
-    }
 
+img.collapse-icon {
+    width: 7%; 
+    display: block;
+    height: auto;
+    justify-self: end;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.collapsible {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top: 1px solid black;
+    cursor: pointer;
+}
+
+p {
+    width: 100%;
+    text-align: right;
+    margin: 0;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
 </style>
 
 <script>
-    var coll = document.getElementsByClassName("collapsible");
+var coll = document.getElementsByClassName("collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-} 
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            // Rotate the collapse icon back to its original position
+            this.querySelector('.collapse-icon').style.transform = 'rotate(0deg)';
+        } else {
+            content.style.display = "block";
+            // Rotate the collapse icon 90 degrees counter-clockwise
+            this.querySelector('.collapse-icon').style.transform = 'rotate(-90deg)';
+        }
+    });
+}
+
 </script>
