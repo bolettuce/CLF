@@ -163,6 +163,23 @@ body {
     font-weight: bold;
 }
 
+ .container {
+    width: 100%; 
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; 
+    margin-top: 10px;
+}
+
+.item-list {
+    display: flex;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+}
+
+
+
+
 .se_events {
     display: flex;
     flex-direction: column;
