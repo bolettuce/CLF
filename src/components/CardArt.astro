@@ -1,20 +1,12 @@
 ---
-const data = await fetch("https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/CLF", {
-    method:"GET", 
-    headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0ZnZkYmptcm92a2hwd3RydmhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAxNjgwNTksImV4cCI6MjAyNTc0NDA1OX0.cbltpVw213xN42FdxfAok2D1oPezdY1T4pHRGP5rUX8"
-    }
-}).then(res=>res.json())
-
+const { data } = Astro.props;
 console.log(data);
 ---
-
-
 
 <a href="">
     <article>
         <img src="src/assets/01.-Du-som-er-i-Himlene-scaled.webp" alt="">
-        <span>01. Du som er i Himlene!</span>
+        <span>{data.Vaerk}</span>
     </article>
 </a>
 

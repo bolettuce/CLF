@@ -2,6 +2,15 @@
 import MainLayout from  "../mainlayout/MainLayout.astro"
 import CardArt from "../components/CardArt.astro"
 import CollapsibleEvent from "../components/CollapsibleEvent.astro"
+
+const data = await fetch("https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/CLF", {
+    method:"GET", 
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0ZnZkYmptcm92a2hwd3RydmhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAxNjgwNTksImV4cCI6MjAyNTc0NDA1OX0.cbltpVw213xN42FdxfAok2D1oPezdY1T4pHRGP5rUX8"
+    }
+}).then(res=>res.json())
+
+console.log(data);
 ---
 <MainLayout>
 <div class="container_2_1">
@@ -35,12 +44,11 @@ import CollapsibleEvent from "../components/CollapsibleEvent.astro"
 <div class="container">
     <div class="carousel-view">
         <div id="item-list" class="item-list">
-            <CardArt></CardArt>
-            <CardArt></CardArt>
-            <CardArt></CardArt>
-            <CardArt></CardArt>
-            <CardArt></CardArt>
-            <CardArt></CardArt>
+            {
+                data.map((vaerk) => {
+                    return <CardArt data={vaerk} />
+                })
+            }
         </div>
     </div>
 </div>
