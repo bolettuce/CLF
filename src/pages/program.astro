@@ -1,79 +1,97 @@
 ---
-import MainLayout from  "../mainlayout/MainLayout.astro"
-import CardArt from "../components/CardArt.astro"
-import CollapsibleEvent from "../components/CollapsibleEvent.astro"
+import MainLayout from "../mainlayout/MainLayout.astro";
+import CardArt from "../components/CardArt.astro";
+import CollapsibleEvent from "../components/CollapsibleEvent.astro";
 
-const data = await fetch("https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/clf_data", {
-    method:"GET", 
+const data = await fetch(
+  "https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/CLF",
+  {
+    method: "GET",
     headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0ZnZkYmptcm92a2hwd3RydmhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAxNjgwNTksImV4cCI6MjAyNTc0NDA1OX0.cbltpVw213xN42FdxfAok2D1oPezdY1T4pHRGP5rUX8"
-    }
-}).then(res=>res.json())
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0ZnZkYmptcm92a2hwd3RydmhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAxNjgwNTksImV4cCI6MjAyNTc0NDA1OX0.cbltpVw213xN42FdxfAok2D1oPezdY1T4pHRGP5rUX8",
+    },
+  }
+).then((res) => res.json());
 
 console.log(data);
 ---
 
 
-
-
 <MainLayout>
-<div class="container_2_1">
+  <div class="container_2_1">
     <div>
-        <h1>PROGRAM 2024</h1>
+      <h1>PROGRAM 2024</h1>
     </div>
     <div>
-        <p>Forneden kan du finde en oversigt over alle 58 lysværker i perioden d. 2.-25. febuar 2024</p>
+      <p>
+        Forneden kan du finde en oversigt over alle 58 lysværker i perioden d.
+        2.-25. febuar 2024
+      </p>
     </div>
-</div>
+  </div>
 
-<div class="container_2_2">
+  <div class="container_2_2">
     <div>
-        <img src="/src/assets/01.-Du-som-er-i-Himlene-scaled.webp" alt="Du som er i Himlene">
+      <img
+        src="/src/assets/01.-Du-som-er-i-Himlene-scaled.webp"
+        alt="Du som er i Himlene"
+      />
     </div>
     <div>
-        <h2>01. Du som er i Himlene!</h2>
-        <p><span>Af: </span>Marie Nørgaard (DK)</p>
-        <p><span>Hvor: </span>Højbro Plads</p>
-        <p>Værket skaber en forbindelse mellem jorden under os og himmelen over  os. Mellem det fysiske og det åndelige. Overgivelse til noget, som er  højere end os. Et sted, hvor man kan forbinde sig til det, man tror på.
-        Marie Nørgaard Nielsen er en dansk tekstilkunstner, som tidligere har  deltaget i Copenhagen Light Festival med Oraklet i 2022 og med På den  anden side af Solen i 2023, der senere samme år var en del af festivalen  Light Art Grindelwald i de schweiziske alper.
-        Mani Nikdel er en iransk designer og kunstner, bosat i Århus. Han har  deltaget på Copenhagen Light Festival de seneste to år med  Transcendence i 2022 og Terra i 2023.</p>
-        <p><span>Lys: </span>Mani Nikdel</p>
-        <p><span>Instagram: </span>marienoergaardnielsen</p>
-        <p><span>Tak: </span>Mathilde Märcher, Jes Hermann Saatterup, Erik Larsen & Søn, Martin Lighting.</p>
+      <h2>{data[0].Vaerk}</h2>
+      <p><span>Af: </span>Marie Nørgaard (DK)</p>
+      <p><span>Hvor: </span>Højbro Plads</p>
+      <p>
+        Værket skaber en forbindelse mellem jorden under os og himmelen over os.
+        Mellem det fysiske og det åndelige. Overgivelse til noget, som er højere
+        end os. Et sted, hvor man kan forbinde sig til det, man tror på. Marie
+        Nørgaard Nielsen er en dansk tekstilkunstner, som tidligere har deltaget
+        i Copenhagen Light Festival med Oraklet i 2022 og med På den anden side
+        af Solen i 2023, der senere samme år var en del af festivalen Light Art
+        Grindelwald i de schweiziske alper. Mani Nikdel er en iransk designer og
+        kunstner, bosat i Århus. Han har deltaget på Copenhagen Light Festival
+        de seneste to år med Transcendence i 2022 og Terra i 2023.
+      </p>
+      <p><span>Lys: </span>Mani Nikdel</p>
+      <p><span>Instagram: </span>marienoergaardnielsen</p>
+      <p>
+        <span>Tak: </span>Mathilde Märcher, Jes Hermann Saatterup, Erik Larsen &
+        Søn, Martin Lighting.
+      </p>
     </div>
-</div>
+  </div>
 
-
-
-<div class="container">
+  <div class="container">
     <div class="carousel-view">
-        <div class="carousel-container">
-            <div id="item-list" class="item-list">
-            {
-                data.map((vaerk) => {
-                    return <CardArt data={vaerk} />
-                })
-            }                
-            </div>
+      <div class="carousel-container">
+        <div id="item-list" class="item-list">
+          {
+            data.map((vaerk) => {
+              return <CardArt data={vaerk} />;
+            })
+          }
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
-
-
-
-<div class="se_events">
+  <div class="se_events">
     <h2>Se events</h2>
-    <img class="hoppe_pil" src="/src/assets/Hoppe_pil.svg" alt="events pil">
-</div>
+    <img class="hoppe_pil" src="/src/assets/Hoppe_pil.svg" alt="events pil" />
+  </div>
 
-<div class="container_2_3">
+  <div class="container_2_3">
     <h1>EVENTS 2024</h1>
-    <p>Forneden kan du finde en oversigt over alle  events i perioden d. 2.-25. febuar 2024</p>
-</div>
+    <p>
+      Forneden kan du finde en oversigt over alle events i perioden d. 2.-25.
+      febuar 2024
+    </p>
+  </div>
 
-
-<CollapsibleEvent></CollapsibleEvent>
-<CollapsibleEvent></CollapsibleEvent>
-
+  {
+    data.map((vaerk) => {
+      return <CollapsibleEvent data={vaerk} />;
+    })
+  }
 </MainLayout>

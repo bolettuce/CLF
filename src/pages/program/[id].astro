@@ -1,7 +1,7 @@
 ---
 
 export async function getStaticPaths() {
-    const data = await fetch("https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/clf_data", {
+    const data = await fetch("https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/CLF", {
     method:"GET", 
     headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0ZnZkYmptcm92a2hwd3RydmhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAxNjgwNTksImV4cCI6MjAyNTc0NDA1OX0.cbltpVw213xN42FdxfAok2D1oPezdY1T4pHRGP5rUX8"
@@ -9,11 +9,12 @@ export async function getStaticPaths() {
 }).then(res=>res.json())
 
 const newData = data.map((program)=>{
-    return {params: {id: program.id}, props: {data: program}};
+    const asText = ""+program.id
+    return {params: {id: asText}, props: {data: program}};
 })
 
 return newData;
-console.log(newData);
+
     return [
         {params: {id: '01. Du som er i Himlene!'}},
         {params: {id: '02. GAIA'}},
@@ -21,6 +22,8 @@ console.log(newData);
 }
 
 const { id } = Astro.params;
+const {data} = Astro.props;
+console.log(data)
 ---
 
-<div>Af: {id}</div>
+<div>Af: {id} {data.Af}</div>
