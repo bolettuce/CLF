@@ -6,7 +6,7 @@ console.log(data);
 
 <a href="">
     <article>
-        <img src="src/assets/01.-Du-som-er-i-Himlene-scaled.webp" alt="">
+        <img src={`/src/assets/${data.billede}`} alt="">
         <span>{data.Vaerk}</span>
     </article>
 </a>
@@ -21,7 +21,7 @@ console.log(data);
         text-align: center;
     }
     img {
-        width: 100%;
+        width: 350px;
         height: auto;
         padding: 0;
     }

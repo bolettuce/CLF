@@ -14,11 +14,6 @@ console.log(data);
 ---
 
 
-https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/clf_data
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0ZnZkYmptcm92a2hwd3RydmhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTAxNjgwNTksImV4cCI6MjAyNTc0NDA1OX0.cbltpVw213xN42FdxfAok2D1oPezdY1T4pHRGP5rUX8" \
-
-          
-
 <MainLayout>
 <div class="container_2_1">
     <div>
@@ -50,15 +45,20 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0ZnZkYmp
 
 <div class="container">
     <div class="carousel-view">
-        <div id="item-list" class="item-list">
+        <div class="carousel-container">
+            <div id="item-list" class="item-list">
             {
                 data.map((vaerk) => {
                     return <CardArt data={vaerk} />
                 })
-            }
+            }                
+            </div>
         </div>
     </div>
 </div>
+
+
+
 
 <div class="se_events">
     <h2>Se events</h2>

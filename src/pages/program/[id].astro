@@ -1,0 +1,12 @@
+---
+export function getStaticPaths() {
+    return [
+        {params: {id: '01. Du som er i Himlene!'}},
+        {params: {id: '02. GAIA'}},
+    ];
+}
+
+const { id } = Astro.params;
+---
+
+<div>Af: {id}</div>
