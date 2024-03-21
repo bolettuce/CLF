@@ -40,24 +40,15 @@ console.log(data);
     </div>
     <div>
       <h2>{data[0].Vaerk}</h2>
-      <p><span>Af: </span>Marie Nørgaard (DK)</p>
-      <p><span>Hvor: </span>Højbro Plads</p>
+      <p><span>Af: </span>{data[0].Af}</p>
+      <p><span>Hvor: </span>{data[0].Hvor}</p>
       <p>
-        Værket skaber en forbindelse mellem jorden under os og himmelen over os.
-        Mellem det fysiske og det åndelige. Overgivelse til noget, som er højere
-        end os. Et sted, hvor man kan forbinde sig til det, man tror på. Marie
-        Nørgaard Nielsen er en dansk tekstilkunstner, som tidligere har deltaget
-        i Copenhagen Light Festival med Oraklet i 2022 og med På den anden side
-        af Solen i 2023, der senere samme år var en del af festivalen Light Art
-        Grindelwald i de schweiziske alper. Mani Nikdel er en iransk designer og
-        kunstner, bosat i Århus. Han har deltaget på Copenhagen Light Festival
-        de seneste to år med Transcendence i 2022 og Terra i 2023.
+        {data[0].info}
       </p>
-      <p><span>Lys: </span>Mani Nikdel</p>
-      <p><span>Instagram: @</span>marienoergaardnielsen</p>
+      <p><span>Lys: </span>{data[0].lys}</p>
+      <p><span>Instagram: @</span>{data[0].insta}</p>
       <p>
-        <span>Tak: </span>Mathilde Märcher, Jes Hermann Saatterup, Erik Larsen &
-        Søn, Martin Lighting.
+        <span>Tak: </span>{data[0].tak}
       </p>
     </div>
   </div>

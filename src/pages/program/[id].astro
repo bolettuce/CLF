@@ -1,4 +1,7 @@
 ---
+import MainLayout from "../../mainlayout/MainLayout.astro";
+import CardArt from "../../components/CardArt.astro";
+import CollapsibleEvent from "../../components/CollapsibleEvent.astro";
 
 export async function getStaticPaths() {
     const data = await fetch("https://ptfvdbjmrovkhpwtrvhf.supabase.co/rest/v1/CLF", {
@@ -21,9 +24,65 @@ return newData;
     ];
 }
 
-const { id } = Astro.params;
 const {data} = Astro.props;
 console.log(data)
 ---
 
-<div>Af: {id} {data.Af}</div>
+<MainLayout>
+    <div class="container_2_1">
+      <div>
+        <h1>PROGRAM 2024</h1>
+      </div>
+      <div>
+        <p>
+          Forneden kan du finde en oversigt over alle 58 lysværker i perioden d.
+          2.-25. febuar 2024
+        </p>
+      </div>
+    </div>
+  
+    <div class="container_2_2">
+        <div><img class="item" src={`/${data.billede}`} alt=""></div>
+      <div>
+        <h2> {data.Vaerk}</h2>
+        <p><span>Af: </span>{data.Af}</p>
+        <p><span>Hvor: </span>data.Hvor}</p>
+        <p>
+            {data.info}
+        </p>
+        <p><span>Lys: </span>{data.lys}</p>
+        <p><span>Instagram: @</span>{data.insta}</p>
+        <p>
+          <span>Tak: </span>{data.tak}
+        </p>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="carousel-view">
+        <div class="carousel-container">
+          <div id="item-list" class="item-list">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="se_events">
+      <h2>Se events</h2>
+      <img class="hoppe_pil" src="/Hoppe_pil.svg" alt="events pil" />
+    </div>
+  
+    <div class="container_2_3">
+      <h1>EVENTS 2024</h1>
+      <p>
+        Forneden kan du finde en oversigt over alle events i perioden d. 2.-25.
+        febuar 2024
+      </p>
+    </div>
+  
+
+  </MainLayout>
+  
+
+
